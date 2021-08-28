@@ -1,3 +1,4 @@
+# stampa a schermo numeri casuali
 import random
 import time
 while True:

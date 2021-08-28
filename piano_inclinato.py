@@ -26,12 +26,12 @@ if scelta == 1:
     p = input("Inserisci peso [N]: ")
     if 0 <= alfa <= 360:
         if p >= 0:
-            alfarad = radians(alfa)
+            alfarad = radians(alfa)             # trasforma l'angolo in radianti
 
-            ppar = p * sin(alfarad)
-            pperp = p * cos(alfarad)
+            ppar = p * sin(alfarad)             # calcola P parallelo
+            pperp = p * cos(alfarad)            # calcola P perpendicolare
 
-            print("P parallelo = " + str(round(ppar, 4)) + " N")
+            print("P parallelo = " + str(round(ppar, 4)) + " N")                # stampa i risultati
             print("P perpendicolare = " + str(round(pperp, 4)) + " N")
         else:
             print("Il peso non può essere negativo !")
@@ -46,7 +46,7 @@ if scelta == 2:
         print(x)
         print(y)
     else:
-        comp = y/x
-        theta = atan(comp)
-        theta = degrees(theta)
+        comp = y/x                      # calcola tan
+        theta = atan(comp)              # calcola tan^-1
+        theta = degrees(theta)          # trasforma in gradi
         print("L'angolo è di " + str(round(theta, 2)) + "°")

@@ -3,7 +3,7 @@
 using namespace std;
 
 string encryptDecrypt(string toEncrypt) {
-    char key[2] = {'A', 'B'}; //Any chars will work, add more chars if you want
+    char key[2] = {'A', 'B'};                       //Any chars will work, add more chars if you want
     string output = toEncrypt;
     
     for (int i = 0; i < toEncrypt.size(); i++)

@@ -6,12 +6,12 @@ using namespace std;
 bool cmplx;
 float d;
 
-float delta(float a, float b, float c) {
-    d = b*b - float(4)*a*c;
+float delta(float a, float b, float c) {            // calcolo del delta
+    d = b*b - float(4)*a*c;                         // delta = b^2 / 4ac
     if (d < 0)
     {
-        cmplx = true;
-        d = -d;
+        cmplx = true;                               // se d < 0, il risultato sarà un numero complesso
+        d = -d;                                     // rende d positivo
     } else
         cmplx = false;
     
@@ -26,16 +26,16 @@ int main() {
     cin >> b;
     cout << endl << "Inserire c: ";
     cin >> c;
-    d = delta(a,b,c);
+    d = delta(a,b,c);                                                      // calcola il delta
     if (cmplx == false)
     {
-        float x1 = (-b+sqrt(d))/(2*a);
-        float x2 = (-b-sqrt(d))/(2*a);
-        cout << "x1 = " << x1 << endl << "x2 = " << x2 << endl;
+        float x1 = (-b+sqrt(d))/(2*a);                                     // calcola x1         
+        float x2 = (-b-sqrt(d))/(2*a);                                     // calcola x1
+        cout << "x1 = " << x1 << endl << "x2 = " << x2 << endl;            // stampa il risultato
     } else if (cmplx == true)
     {
-        float rd = sqrt(d);
-        float x = (-b)/(2*a);
-        cout << "x1 = " << x << "+" << rd << "i" << endl << "x2 = " << x << "-" << rd << "i" << endl;
+        float rd = sqrt(d);                                                // calcola radice di delta (parte immaginaria del numero)
+        float x = (-b)/(2*a);                                              // calcola la parte reale del numero
+        cout << "x1 = " << x << "+" << rd << "i" << endl << "x2 = " << x << "-" << rd << "i" << endl;           // stampa il numero complesso
     }
 }

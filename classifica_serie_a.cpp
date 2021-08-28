@@ -3,7 +3,7 @@
 using namespace std;
 
  
-struct Squadra 
+struct Squadra          // creazione della struttura Squadra
 {
     string nome;
     int totale; 
@@ -14,7 +14,7 @@ struct Squadra
 };
 
 
-void ottieniPartite(Squadra s[], int n) {
+void ottieniPartite(Squadra s[], int n) {               // chiede partite vinte, perse e pareggiate per ogni squadra
     for (int i = 0; i < n; i++)
     {
         cout << "Squadra: " << s[i].nome << endl;
@@ -41,9 +41,8 @@ bool confrontaSquadre(Squadra a, Squadra b)
 void calcolaPunti(Squadra s[], int n)
 {
 
-    for (int i = 0; i < n; i++)
-    {
-        s[i].totale = (s[i].vittorie)*3 + (s[i].pareggi);
+    for (int i = 0; i < n; i++) {
+        s[i].totale = (s[i].vittorie)*3 + (s[i].pareggi);       // per ogni squadra calcola il punteggio totale
     }
     
     
@@ -62,8 +61,7 @@ int main()
 {
     int n = 20;
  
-    // array di strutture
-    Squadra s[n];
+    Squadra s[n];                      // array di strutture
  
     s[0].nome = "Inter";
     s[1].nome = "Milan";
@@ -92,7 +90,7 @@ int main()
     
     calcolaPunti(s, n);
  
-    
+    // stampa a schermo la tabella delle squadre
     cout << "Posizione"
          << "   "
          << "Punteggio"
