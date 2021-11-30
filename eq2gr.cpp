@@ -26,14 +26,18 @@ int main() {
     cin >> b;
     cout << endl << "Inserire c: ";
     cin >> c;
+    if (a == 0) {                                   // verifica se a = 0, quindi equazione di primo grado
+        cout << "In un'equazione di secondo grado, a deve essere diverso da 0" << endl;
+        return 0;
+    }
+    
     d = delta(a,b,c);                                                      // calcola il delta
-    if (cmplx == false)
-    {
+
+    if (cmplx == false) {
         float x1 = (-b+sqrt(d))/(2*a);                                     // calcola x1         
         float x2 = (-b-sqrt(d))/(2*a);                                     // calcola x1
         cout << "x1 = " << x1 << endl << "x2 = " << x2 << endl;            // stampa il risultato
-    } else if (cmplx == true)
-    {
+    } else if (cmplx == true) {
         float rd = sqrt(d);                                                // calcola radice di delta (parte immaginaria del numero)
         float x = (-b)/(2*a);                                              // calcola la parte reale del numero
         cout << "x1 = " << x << "+" << rd << "i" << endl << "x2 = " << x << "-" << rd << "i" << endl;           // stampa il numero complesso
